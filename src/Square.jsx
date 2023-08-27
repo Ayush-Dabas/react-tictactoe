@@ -1,7 +1,17 @@
 import React from "react";
+import { useState } from "react";
 
-const Square = ({ value }) => {
-  return <div className="square">{value}</div>;
+const Square = () => {
+  const [value, setValue] = useState(null);
+  function handleClick() {
+    // console.log("clicked !");
+    setValue("X");
+  }
+  return (
+    <div className="square" onClick={handleClick}>
+      {value}
+    </div>
+  );
 };
 
 export default Square;

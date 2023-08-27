@@ -5,19 +5,19 @@ const Board = () => {
   return (
     <div>
       <div className="boardRow">
-        <Square value="" />
-        <Square value="" />
-        <Square value="" />
+        <Square />
+        <Square />
+        <Square />
       </div>
       <div className="boardRow">
-        <Square value="" />
-        <Square value="" />
-        <Square value="" />
+        <Square />
+        <Square />
+        <Square />
       </div>
       <div className="boardRow">
-        <Square value="" />
-        <Square value="" />
-        <Square value="" />
+        <Square />
+        <Square />
+        <Square />
       </div>
     </div>
   );
