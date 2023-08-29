@@ -5,6 +5,7 @@ import { useState } from "react";
 const Board = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
+
   function handleClick(index) {
     if (squares[index] || calculateWinner(squares)) {
       return;
@@ -18,7 +19,6 @@ const Board = () => {
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
   }
-
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
@@ -27,6 +27,10 @@ const Board = () => {
     status = "Next Player: " + (xIsNext ? "O" : "X");
   }
 
+  function clearBoard(squares) {
+    squares.fill(null);
+    setXIsNext(true);
+  }
   return (
     <div>
       <div className="status">{status}</div>
@@ -44,6 +48,9 @@ const Board = () => {
         <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
+      <div className="reset" onClick={() => clearBoard(squares)}>
+        Reset
       </div>
     </div>
   );
