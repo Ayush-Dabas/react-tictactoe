@@ -11,9 +11,9 @@ const Board = () => {
     }
     const nextSquares = squares.slice();
     if (xIsNext) {
-      nextSquares[index] = "X";
-    } else {
       nextSquares[index] = "O";
+    } else {
+      nextSquares[index] = "X";
     }
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
@@ -24,7 +24,7 @@ const Board = () => {
   if (winner) {
     status = "Winner: " + winner;
   } else {
-    status = "Next Player: " + (xIsNext ? "X" : "O");
+    status = "Next Player: " + (xIsNext ? "O" : "X");
   }
 
   return (
